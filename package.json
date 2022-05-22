@@ -1,5 +1,5 @@
 {
-  "homepage":"https://alegb91.github.io/Drum-Machine",
+  "homepage": "https://alegb91.github.io/Drum-Machine",
   "name": "drummachine",
   "version": "0.1.0",
   "private": true,
@@ -37,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
