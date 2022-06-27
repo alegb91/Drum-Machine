@@ -142,8 +142,11 @@ function App() {
       )
   };
 
+  const volumeDisplay = Math.round(volume * 100);
+
   return (
     <div className="principal container" id="drum-machine">
+      <div id="display" className="row background"></div>
       <div id="display" className="row fila">
 
          {/* ---------------IZQUIERDA---------------- */}
@@ -156,17 +159,23 @@ function App() {
 
           {/* ---------------DERECHA---------------- */}
 
-          <div className="m-3 mt-5 col-5">
-              <h4>Volume</h4>
-              <input onChange={e => setVolume(e.target.value)} value={volume} type="range" step="0.01" max="1" min="0" className="w-50"/> 
+          <div className="m-3 mt-5 col-5 derecha">
+
+              <h4>Volume</h4>       
+                <span className="tagw">{volumeDisplay}</span>
+                <input onChange={e => setVolume(e.target.value)} value={volume} type="range" step="0.01" max="1" min="0" className="w-50" id="rangew"/> 
               <h3>{recording}</h3>
               {recording && (
                 <>
-               <button onClick={playRecording} className="m-2 btn btn-success">play</button>
-               <button onClick={()=> setRecording("")} className="m-2 btn btn-danger">clear</button>
+                <div>
+               <button onClick={playRecording} className="m-2 btn btn-success play">play</button>
+               <button onClick={()=> setRecording("")} className="m-2 btn btn-danger clear">clear</button>
+               </div> 
                <br/>
-               <h4>Speed</h4>
-               <input onChange={e => setSpeed(e.target.value)} value={speed} type="range" step="0.01" max="1.2" min="0.1" className="w-50"/> 
+               
+               <h4>Speed</h4>    
+               <span className="tagw">{speed}</span>         
+               <input onChange={e => setSpeed(e.target.value)} value={speed} type="range" step="0.01" max="1.2" min="0.1" className="w-50" id="rangew"/> 
                </>
               )}
           </div>
@@ -205,7 +214,7 @@ const Pad = ({clip, volume, setRecording}) => {
     }
 
     return (
-      <div onClick={playSound} type="button" id="boton" className={`drum-pad p-3 col-4 btn btn-warning ${active && "btn-danger"}`}>{clip.keyTrigger}<audio className="clip" id={clip.keyTrigger} src={clip.url}/></div>
+      <div onClick={playSound} type="button" id="boton" className={`drum-pad p-3 col-4 btn  ${active ? "btn-danger" : "btn-light"}`}>{clip.keyTrigger}<audio className="clip" id={clip.keyTrigger} src={clip.url}/></div>
     )
 }
 
