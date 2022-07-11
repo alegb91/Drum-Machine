@@ -151,7 +151,7 @@ function App() {
 
          {/* ---------------IZQUIERDA---------------- */}
 
-          <div className="m-3 mt-5 col-5 d-flex justify-content-center">
+          <div align="center" className="mt-5 col-10 col-sm-10 col-md-8 col-lg-6 col-xl-5 d-flex justify-content-center align-items-center">
             <div className="izquierda">
               {audioClips.map(clip => <Pad key={clip.id} clip={clip} volume={volume} setRecording={setRecording}/>)}
             </div>
@@ -159,7 +159,7 @@ function App() {
 
           {/* ---------------DERECHA---------------- */}
 
-          <div className="m-3 mt-5 col-5 derecha">
+          <div className="mt-3 col-10 col-sm-10 col-md-8 col-lg-6 col-xl-5 derecha">
 
               <h4>Volume</h4>       
                 <span className="tagw">{volumeDisplay}</span>
@@ -214,7 +214,7 @@ const Pad = ({clip, volume, setRecording}) => {
     }
 
     return (
-      <div onClick={playSound} type="button" id="boton" className={`drum-pad p-3 col-4 btn  ${active ? "btn-danger" : "btn-light"}`}>{clip.keyTrigger}<audio className="clip" id={clip.keyTrigger} src={clip.url}/></div>
+      <div onClick={playSound} type="button" id="boton" className={`drum-pad p-3 col-1 btn  ${active ? "btn-danger" : "btn-light"}`}>{clip.keyTrigger}<audio className="clip" id={clip.keyTrigger} src={clip.url}/></div>
     )
 }
 

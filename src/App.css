@@ -3,6 +3,8 @@
   background-image: url("./images/photo-1588032786045-59cefda005c0.jpg");
   background-repeat: no-repeat;
 background-size: 100%;
+background-position: center;
+background-color: black;
 }
 
 .principal {
@@ -20,14 +22,15 @@ background-size: 100%;
   align-items: center;
   flex-direction: column;
   color: #fdfffc;
-}
+} 
+
 
 .background {
   background-color: black;
   height: 70vh;
   width: 100%;
-  margin-top: 175px;
-  margin-bottom: 150px;
+  padding-top: 175px;
+  padding-bottom: 150px;
   position: absolute;
   z-index: 0;
   opacity: 0.5;
@@ -85,5 +88,32 @@ input::-webkit-slider-thumb {
 .clear {
   background-color: #c1292e;
   border: 1px solid white;
+}
+
+
+@media all and (max-width: 500px) {
+  #boton {
+    padding: 0px;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media all and (max-width: 450px) {
+
+
+  #boton {
+    padding: 0px;
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media all and (max-width: 360px) {
+  #boton {
+    width: 61px;
+    height: 61px;
+    margin: 4px;
+  }
 }
 
